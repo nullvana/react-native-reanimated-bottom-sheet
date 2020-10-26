@@ -809,6 +809,15 @@ export default class BottomSheetBehavior extends React.Component<Props, State> {
             position: 'absolute',
             zIndex: 100,
             elevation: 100,
+
+            shadowColor: '#000', // for ios
+            shadowOffset: {
+              width: 0,
+              height: -5,
+            },
+            shadowOpacity: 0.16,
+            shadowRadius: 5.46,
+
             opacity: cond(this.height, 1, 0),
             transform: [
               {
@@ -848,6 +857,8 @@ export default class BottomSheetBehavior extends React.Component<Props, State> {
                 overflow: this.props.overflow || 'hidden',
                 borderTopLeftRadius: borderRadius,
                 borderTopRightRadius: borderRadius,
+
+                elevation: 10, // for aos
               }
             }
           >
